@@ -1,7 +1,16 @@
-<header id="header" class="row" data-hook>
-  <figure id="logo" class="columns six" data-hook>
-  	<h1 class="title-header"><%= link_to "Shop Free", "/"%></h1>
-  </figure>
-  <%= render :partial => 'spree/shared/nav_bar' %>
-  <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
-</header>
+
+<ul id="main-menu" class="sm sm-blue">
+  <li><h1><a href="#">Shop Free</a></h1></li>
+  <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+  <% if  params[:controller] != "spree/user_sessions" %>
+  	<li><a href="#about/">Categories</a>
+	  <% get_taxonomies.each do |taxonomy| %>
+	    <%= taxons_tree(taxonomy.root, @taxon,  6) %>
+ 	  <% end %>
+  	<% end %>
+
+   </li>
+  <li><a href="#about/">Daily Deals</a> </li>
+  <li><a href="#about/">Popular</a> </li>
+  <li id="link-to-cart" data-hook><%= link_to_cart %></li>
+ </ul>
