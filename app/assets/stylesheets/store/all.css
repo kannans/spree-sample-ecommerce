@@ -1,0 +1,40 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+
+ *= require store/spree_frontend
+
+ *= require_self
+ *= require_tree .
+ *= require store/spree_fancy
+*/
+body{
+	border: none !important;
+	padding: 0px !important;
+}
+
+.page-wrapper{
+	background: cornsilk;
+}
+
+#subheader{
+	margin: auto 10%;
+}
+
+#logo{
+	margin: 0 0 0 -6% !important;
+}
+.title-header{
+	margin-top: 30px;
+	color: green;
+	font-size:  3em;
+}
+
+.line_item_quantity{
+	width: 80px !important;
+}
+.product-order-form input{
+	width: 80px !important;
+}
